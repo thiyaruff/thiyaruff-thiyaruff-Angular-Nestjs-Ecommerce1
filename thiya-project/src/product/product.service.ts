@@ -46,7 +46,8 @@ export class ProductService {
     shippings,
     gender,
     brands,
-    category} = updateProductDto;
+    category,
+    subcategory} = updateProductDto;
 
     const findProduct = await this.productRepository.findOne({where:{id:id}})
     
@@ -66,7 +67,8 @@ export class ProductService {
     shippings && (updateProduct.shippings=shippings);
     gender && (updateProduct.gender=gender);
     brands && (updateProduct.brands=brands);
-    category && (updateProduct.category);
+    category && (updateProduct.category=category);
+    subcategory && (updateProduct.subcategory=subcategory)
 
     await this.productRepository.update({id:id}, updateProduct)
 

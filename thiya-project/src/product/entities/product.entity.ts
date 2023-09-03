@@ -39,6 +39,9 @@ brands:string;
 @Column('text')
 category:string;
 
+@Column('text')
+subcategory:string;
+
 
 
 }
