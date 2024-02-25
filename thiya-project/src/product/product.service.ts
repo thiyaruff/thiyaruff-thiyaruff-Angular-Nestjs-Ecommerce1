@@ -3,13 +3,20 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ProductEntity } from './entities/product.entity';
-import { Repository } from 'typeorm';
+import { DataSource, getRepository, Repository} from 'typeorm';
+
+
+
+
 
 @Injectable()
+
+
 export class ProductService {
   constructor(
     @InjectRepository(ProductEntity)
-    private productRepository: Repository<ProductEntity>
+    private productRepository: Repository<ProductEntity>,
+    private dataSource: DataSource
   ){}
 
   async create(createProductDto: CreateProductDto) {
@@ -86,5 +93,14 @@ export class ProductService {
     await this.productRepository.remove(findProduct)
 
     return 'This product has deleted'
+  }
+
+  async findProductBycategory(name:string){
+    const findProduct=await this.dataSource.getRepository(ProductEntity).createQueryBuilder('product')
+    .where("product.subcategory=:name",{name}).getMany()
+   
+    console.log("name:",name)
+    console.log("findProduct", findProduct)
+    return findProduct
   }
 }

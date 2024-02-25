@@ -5,19 +5,29 @@
 }
 .collection-header{
 
-    font-size: 300;
+    font-size: 600;
 }
 
 .header{
 
     margin-top: 5rem;
-    margin-left: 2.9rem;
+    /* margin-left: 2.9rem; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .land-img{
 
     width: 100%;
+ 
 }
+
+.container{
+position: relative;
+
+}
+
 
 .btn-container{
     display: flex;

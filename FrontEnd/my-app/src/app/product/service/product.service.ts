@@ -16,4 +16,9 @@ getProducts(){
 
 }
 
+getProductsBySubCtegory(id:any){
+
+    return this.http.get(this.apiURL +'/product/category/'+ id)
+}
+
 }
