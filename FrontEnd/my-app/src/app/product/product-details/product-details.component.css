@@ -88,3 +88,10 @@ transition: transfrom 200ms;
 text-align: center;
 
 }
+
+.paypal-btn{
+    margin-top: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+}

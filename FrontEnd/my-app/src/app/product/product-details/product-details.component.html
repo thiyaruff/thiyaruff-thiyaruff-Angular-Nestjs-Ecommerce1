@@ -13,10 +13,12 @@
 <div>
     <img class="banner" src="https://ik.imagekit.io/ThiyaRuff/bags/banner-dark_W5uq7Dv5o.jpg?updatedAt=1690389049308"
         alt="">
+<div>
+<div *ngIf="product">
 
-</div>
+
 <div class="header">
-    <h4 class="collection-header">Nike One-Women's Training Tote Bag </h4>
+    <h4 class="collection-header">{{product.title}} </h4>
 </div>
 
 
@@ -24,23 +26,24 @@
 <div class="product-list-container">
     <div class="product-list">
         <img class="product-img"
-            src="https://ik.imagekit.io/ThiyaRuff/bags/bag1-removebg-preview.png?updatedAt=1690663406703" alt="">
+            [src]="product.imgUrl1" alt="">
     </div>
     <div class="product-price">
-        $500
+        {{product.price}}
     </div>
     <div class="product-info">
-        The Nike One Tote Bag is your solution to fitting everything into your day. From work or school to working
-        out—the versatile design holds everything you need. Load up the lightweight bag with a laptop, yoga mat, water
-        bottle and everything else to conquer your day. This product is made from at least 50% recycled polyester
-        fibres.
+     {{product.description}}
     </div>
 </div>
 
 <div class="buy-btn-container">
 
 
-<button class="buy-btn">
-    Buy now
-</button>
+
+</div>
+</div>
+<div class="paypal-btn">
+    <div #paypal></div>
+
+
 </div>

@@ -21,4 +21,8 @@ getProductsBySubCtegory(id:any){
     return this.http.get(this.apiURL +'/product/category/'+ id)
 }
 
+getProductDetailById (id:any){
+
+    return this.http.get(this.apiURL +'/product/'+ id)
+}
 }

@@ -12,11 +12,7 @@ import { TitleTransformPipe } from './product/title.transform.pipe';
 
 @NgModule({
   declarations: [
-    TitleTransformPipe,
-    AppComponent,
-    ProductBagsComponent,
-    ProductDetailsComponent,
-    SubCategoryComponent,
+    AppComponent
     
   ],
   imports: [
